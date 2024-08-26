@@ -11,3 +11,11 @@
 9x1=9 9x2=18 9x3=27 9x4=36 9x5=45 9x6=54 9x7=63 9x8=72 9x9=81
 
 """
+n = int(input(f"请输入一个数字:"))
+
+def func(n):
+    for x in range (1, n+1):
+        for y in range (1, x+1):
+            print(f"{x} x {y} = {x*y}", end=" ")
+        print("\n")
+func(n)
