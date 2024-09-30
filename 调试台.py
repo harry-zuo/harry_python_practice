@@ -1,23 +1,22 @@
 """
-输入：tickets = [2,3,2], k = 2
-
-输出：6
+输入：s = "  hello world  "
+输出："world hello"
+解释：反转后的字符串中不能存在前导空格和尾随空格。
 """
 
-tickets = [2,3,2]
-k = 2
+s = "a good   example"
 
-def func():
-    i = ans = 0
-    while tickets[k] > 0:
-        if tickets[i] > 0:
-            tickets[i] -= 1
-            ans += 1
-        i += 1
-        if i == len(tickets):
-            i = 0
-    return ans
+def func(s):
+    s = s.strip()
+    left_p = right_p = len(s) - 1
+    answer = []
+    while left_p >= 0:
+        while left_p >=0 and s[left_p] != " ": left_p -= 1
+        answer.append(s[left_p+1:right_p+1])
+        while s[left_p] == " ": left_p -= 1
+        right_p = left_p
+
+    return " ".join(answer)
         
-
-res = func()
+res = func(s)
 print(res)
