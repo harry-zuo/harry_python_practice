@@ -191,6 +191,24 @@ class Solution:
  
 标签： 数组 双指针
 
+class Solution:
+    def moveZeroes(self, nums: List[int]) -> None:
+        
+        # 记零值的偏移量，遇到非零则左移偏移量 O(n)
+        # offset = 0
+        # for idx in range(len(nums)):
+        #     if nums[idx] == 0:
+        #         offset += 1
+        #     elif offset:
+        #         nums[idx - offset], nums[idx] = nums[idx], 0
+
+        # 双指针 O(n)
+        l = 0
+        for r in range(len(nums)):
+            if nums[r] != 0:
+                nums[l], nums[r] = nums[r], nums[l]
+                l += 1
+                
 """
 
 
