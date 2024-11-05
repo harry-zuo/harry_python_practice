@@ -212,9 +212,15 @@ class Solution:
 """
 
 
-# def func():
-#     pass
-#     return
+def func():
+    n = 4
+    ans = []
+    mask = (1 << n) - 1
+    for x in range(1 << n):
+        if (x >> 1) & x == 0:
+            # 0{n}b 表示长为 n 的有前导零的二进制
+            ans.append(f"{x ^ mask:0{n}b}")
+    return res
         
-# res = func()
-# print(res)
+res = func()
+print(res)
