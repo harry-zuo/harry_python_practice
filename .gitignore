@@ -130,7 +130,7 @@ ENV/
 env.bak/
 venv.bak/
 dev_test.py
-python_并行编程
+python_并发与并行
 
 # Spyder project settings
 .spyderproject
