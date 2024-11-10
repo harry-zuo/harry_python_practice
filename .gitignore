@@ -132,6 +132,7 @@ venv.bak/
 dev_test.py
 python_并发与并行
 pytest_venv
+pytest_vevn_311
 
 # Spyder project settings
 .spyderproject
