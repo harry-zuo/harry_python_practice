@@ -58,10 +58,10 @@ def hunting_at_position(x, y):
             if not pre_exp:
                 pre_exp = cur_exp
             
-            if loop_count % 10 == 0 and pre_exp == cur_exp:
+            if loop_count % 11 == 0 and pre_exp == cur_exp:
                 print(f"Loop count is {loop_count} and pre_exp is same as cur_exp[{cur_exp}]. Exiting...")
                 [play_alert_sound() for _ in range(3)]
-                close_window(13, 38, 330, 312)
+                close_window(14, 38, 330, 312)
                 break
 
             # Check if the active window is "MapleStory"
