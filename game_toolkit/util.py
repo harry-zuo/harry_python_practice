@@ -45,7 +45,7 @@ def play_alert_sound():
 def hunting_at_position(x, y):
     """Perform a series of actions involving keyboard and mouse interactions, with interruption handling."""
     pre_exp = ""
-    loop_count = 0
+    loop_count = 1
 
     try:
         while True:
