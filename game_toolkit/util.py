@@ -53,6 +53,8 @@ def hunting_at_position(x, y):
             print(f"current_time: {datetime.datetime.now()} [loop_count: {loop_count}] pre_exp: {pre_exp}, and captured cur_exp: {cur_exp}")
             if not cur_exp:
                 print(f"No text captured. Exiting...")
+                [play_alert_sound() for _ in range(3)]
+                close_window(14, 38, 317, 260)
                 break
             
             if not pre_exp:
@@ -62,7 +64,7 @@ def hunting_at_position(x, y):
                 if pre_exp == cur_exp:
                     print(f"Loop count is {loop_count} and pre_exp is same as cur_exp[{cur_exp}]. Exiting...")
                     [play_alert_sound() for _ in range(3)]
-                    close_window(14, 38, 330, 312)
+                    close_window(14, 38, 317, 260)
                     break
                 pre_exp = cur_exp
 
@@ -70,6 +72,8 @@ def hunting_at_position(x, y):
             active_window = gw.getActiveWindow()
             if not active_window or active_window.title() != "Maplestory Worlds Maplestory Worlds":
                 print(f"Active window is not 'Maplestory Worlds Maplestory Worlds'. Exiting... {active_window.title()}")
+                [play_alert_sound() for _ in range(3)]
+                close_window(14, 38, 317, 260)
                 break
 
             # Press and hold the left arrow key for a random duration between 1 to 3 seconds
@@ -100,14 +104,14 @@ def hunting_at_position(x, y):
 
 def close_window(window_x, window_y, confirm_btn_x, confirm_btn_y):
     pyautogui.moveTo(window_x, window_y, duration=2)
-    [pyautogui.click(window_x, window_y) for _ in range(2)]
+    [pyautogui.click(window_x, window_y) for _ in range(4)]
 
     pyautogui.moveTo(confirm_btn_x, confirm_btn_y, duration=2)
-    [pyautogui.click(confirm_btn_x, confirm_btn_y) for _ in range(2)]
+    [pyautogui.click(confirm_btn_x, confirm_btn_y) for _ in range(4)]
 
 
 if __name__ == "__main__":
-    text = capture_and_recognize(474, 474, 509, 483)
-    print(f'captured text: {text}')
+    # text = capture_and_recognize(474, 474, 509, 483)
+    # print(f'captured text: {text}')
 
-    # close_window(13, 38, 330, 312)
+    close_window(13, 38, 317, 260)
