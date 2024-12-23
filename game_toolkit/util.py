@@ -49,7 +49,7 @@ def hunting_at_position(x, y):
 
     try:
         while True:
-            cur_exp = capture_and_recognize(475, 475, 509, 485)
+            cur_exp = capture_and_recognize(471, 473, 509, 483)
             print(f"current_time: {datetime.datetime.now()} [loop_count: {loop_count}] pre_exp: {pre_exp}, and captured cur_exp: {cur_exp}")
             if not cur_exp:
                 print(f"No text captured. Exiting...")
@@ -58,11 +58,13 @@ def hunting_at_position(x, y):
             if not pre_exp:
                 pre_exp = cur_exp
             
-            if loop_count % 11 == 0 and pre_exp == cur_exp:
-                print(f"Loop count is {loop_count} and pre_exp is same as cur_exp[{cur_exp}]. Exiting...")
-                [play_alert_sound() for _ in range(3)]
-                close_window(14, 38, 330, 312)
-                break
+            if loop_count % 21 == 0:
+                if pre_exp == cur_exp:
+                    print(f"Loop count is {loop_count} and pre_exp is same as cur_exp[{cur_exp}]. Exiting...")
+                    [play_alert_sound() for _ in range(3)]
+                    close_window(14, 38, 330, 312)
+                    break
+                pre_exp = cur_exp
 
             # Check if the active window is "MapleStory"
             active_window = gw.getActiveWindow()
@@ -76,7 +78,7 @@ def hunting_at_position(x, y):
             pyautogui.keyUp('left')
 
             # Click 4 times with a 0.2-second interval
-            for _ in range(6):
+            for _ in range(4):
                 pyautogui.click(x, y)
                 time.sleep(0.2)
 
@@ -86,7 +88,7 @@ def hunting_at_position(x, y):
             pyautogui.keyUp('right')
 
             # Click 4 times with a 0.2-second interval
-            for _ in range(6):
+            for _ in range(3):
                 pyautogui.click(x, y)
                 time.sleep(0.2)
 
@@ -105,7 +107,7 @@ def close_window(window_x, window_y, confirm_btn_x, confirm_btn_y):
 
 
 if __name__ == "__main__":
-    # text = capture_and_recognize(475, 475, 509, 485)
-    # print(f'captured text: {text}')
+    text = capture_and_recognize(474, 474, 509, 483)
+    print(f'captured text: {text}')
 
-    close_window(13, 38, 330, 312)
+    # close_window(13, 38, 330, 312)
