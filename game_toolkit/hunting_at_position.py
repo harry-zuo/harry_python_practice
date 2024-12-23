@@ -8,4 +8,5 @@ if __name__ == "__main__":
     x, y = 644, 308  # Define initial coordinates
     pyautogui.moveTo(x, y, duration=2)  # Move to initial position
 
-    hunting_at_position(x, y)  # Click at the specified position 
+    close_window_config = 12, 37, 380, 333
+    hunting_at_position(x, y, close_window_config)  # Click at the specified position 
