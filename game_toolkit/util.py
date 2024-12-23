@@ -49,7 +49,8 @@ def hunting_at_position(x, y, close_window_config):
 
     try:
         while True:
-            cur_exp = capture_and_recognize(471, 473, 509, 483)
+            # cur_exp = capture_and_recognize(471, 473, 509, 483)
+            cur_exp = capture_and_recognize(576, 618, 613, 631)
             print(f"current_time: {datetime.datetime.now()} [loop_count: {loop_count}] pre_exp: {pre_exp}, and captured cur_exp: {cur_exp}")
             if not cur_exp:
                 print(f"No text captured. Exiting...")
@@ -69,12 +70,13 @@ def hunting_at_position(x, y, close_window_config):
                 pre_exp = cur_exp
 
             # Check if the active window is "MapleStory"
-            active_window = gw.getActiveWindow()
-            if not active_window or active_window.title() != "Maplestory Worlds Maplestory Worlds":
-                print(f"Active window is not 'Maplestory Worlds Maplestory Worlds'. Exiting... {active_window.title()}")
-                [play_alert_sound() for _ in range(3)]
-                close_window(close_window_config)
-                break
+            # TODO always hit this error: Window Server Statusindicator 
+            # active_window = gw.getActiveWindow()
+            # if not active_window or active_window.title() != "Maplestory Worlds Maplestory Worlds":
+            #     print(f"Active window is not 'Maplestory Worlds Maplestory Worlds'. Exiting... {active_window.title()}")
+            #     [play_alert_sound() for _ in range(3)]
+            #     close_window(close_window_config)
+            #     break
 
             # Press and hold the left arrow key for a random duration between 1 to 3 seconds
             pyautogui.keyDown('left')
@@ -105,9 +107,12 @@ def hunting_at_position(x, y, close_window_config):
 def close_window(close_window_config):
     window_x, window_y, confirm_btn_x, confirm_btn_y = close_window_config
     pyautogui.moveTo(window_x, window_y, duration=2)
+    time.sleep(1)
     [pyautogui.click(window_x, window_y) for _ in range(4)]
 
+    
     pyautogui.moveTo(confirm_btn_x, confirm_btn_y, duration=2)
+    time.sleep(1)
     [pyautogui.click(confirm_btn_x, confirm_btn_y) for _ in range(4)]
 
 
