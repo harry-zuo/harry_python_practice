@@ -78,22 +78,18 @@ def hunting_at_position(x, y, close_window_config):
             #     close_window(close_window_config)
             #     break
 
-            # Press and hold the left arrow key for a random duration between 1 to 3 seconds
             pyautogui.keyDown('left')
-            time.sleep(random.uniform(0.5, 1))
+            time.sleep(random.uniform(0.2, 0.5))
             pyautogui.keyUp('left')
 
-            # Click 4 times with a 0.2-second interval
-            for _ in range(4):
+            for _ in range(6):
                 pyautogui.click(x, y)
                 time.sleep(0.2)
 
-            # Press and hold the right arrow key for a random duration between 1 to 3 seconds
             pyautogui.keyDown('right')
-            time.sleep(random.uniform(0.5, 1))
+            time.sleep(random.uniform(0.2, 0.5))
             pyautogui.keyUp('right')
 
-            # Click 4 times with a 0.2-second interval
             for _ in range(3):
                 pyautogui.click(x, y)
                 time.sleep(0.2)
