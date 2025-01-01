@@ -61,7 +61,7 @@ def hunting_at_position(x, y, close_window_config):
             if not pre_exp:
                 pre_exp = cur_exp
             
-            if loop_count % 21 == 0:
+            if loop_count % 31 == 0:
                 if pre_exp == cur_exp:
                     print(f"Loop count is {loop_count} and pre_exp is same as cur_exp[{cur_exp}]. Exiting...")
                     [play_alert_sound() for _ in range(3)]
@@ -82,7 +82,7 @@ def hunting_at_position(x, y, close_window_config):
             time.sleep(random.uniform(0.2, 0.5))
             pyautogui.keyUp('left')
 
-            for _ in range(6):
+            for _ in range(4):
                 pyautogui.click(x, y)
                 time.sleep(0.2)
 
@@ -90,7 +90,7 @@ def hunting_at_position(x, y, close_window_config):
             time.sleep(random.uniform(0.2, 0.5))
             pyautogui.keyUp('right')
 
-            for _ in range(3):
+            for _ in range(4):
                 pyautogui.click(x, y)
                 time.sleep(0.2)
 
