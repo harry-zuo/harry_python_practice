@@ -12,4 +12,4 @@ def solution_from_harry(w1, w2):
             return False    
     return found
         
-print(solution_from_harry('aog', 'god'))
+print(solution_from_harry('python', 'typhon是'))
