@@ -3,6 +3,7 @@
 """
 import random
 """
+"""
 import random
 
 a = input(f"请输入一个手势(剪刀,石头,布):")
@@ -27,3 +28,14 @@ elif (a == "剪刀" and b =="布") or (a == "布" and b =="石头") or (a == "�
 else:
     c = "计算机赢"
 print(c)
+"""
+
+
+a = int(input(f"请输入一个数字:"))
+
+for b in range (1, a+1):
+    for c in range (1, a-b+1):
+          print(" ", end="")
+    for d in range (0, 2*b-1):
+          print("*", end="")
+    print("\n")
